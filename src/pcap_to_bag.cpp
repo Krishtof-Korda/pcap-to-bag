@@ -88,12 +88,12 @@ void read_packets(const std::string &pcap_filename,
             << " seconds" << std::endl;
 }
 
-int main(int argc, char **argv) {
-  if (argc != 4) {
-    std::cout << "USAGE: pcap_to_bag pcap_filename.pcap bag_filename.bag"
-              << std::endl;
-    return 1;
-  }
-  read_packets(argv[1], argv[2], argv[3]);
-  return 0;
+int main(int argc, char** argv) {
+    if (argc != 4) {
+        std::cout << "USAGE: pcap_to_bag pcap_filename.pcap bag_filename.bag num_lidar_channels"
+                  << std::endl;
+        return 1;
+    }
+    read_packets(argv[1], argv[2], argv[3]);
+    return 0;
 }
