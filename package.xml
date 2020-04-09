@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pcap_to_bag</name>
+  <version>0.0.0</version>
+  <description>OS1 pcap to rosbag of PackMsg</description>
+  <maintainer email="daniel.lu@ouster.io">Daniel Lu</maintainer>
+  <license>Ouster License</license>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>ouster_ros</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>rosbag</build_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>rosbag</exec_depend>
+  <exec_depend>ouster_ros</exec_depend>
+
+  <export> </export>
+</package>
