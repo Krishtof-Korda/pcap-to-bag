@@ -82,7 +82,7 @@ void read_packets(const std::string& pcap_filename,
 
 int main(int argc, char** argv) {
     if (argc != 4) {
-        std::cout << "USAGE: pcap_to_bag pcap_filename.pcap bag_filename.bag"
+        std::cout << "USAGE: pcap_to_bag pcap_filename.pcap bag_filename.bag num_lidar_channels"
                   << std::endl;
         return 1;
     }
