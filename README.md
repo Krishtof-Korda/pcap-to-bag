@@ -9,7 +9,7 @@ This tool converts pcaps to rosbags.
 
 ## Building
 
-* mkdir -p myworkspace/src && cd myworkspace && ln -s /path/to/ouster_example ./src/ && ln -s /path/to/pcap-to-bag ./src/ && catkin_make -DCMAKE_BUILD_TYPE=Release
+* `mkdir -p myworkspace/src && cd myworkspace && ln -s /path/to/ouster_example ./src/ && ln -s /path/to/pcap-to-bag ./src/ && catkin_make -DCMAKE_BUILD_TYPE=Release`
 
 ## Running
 
