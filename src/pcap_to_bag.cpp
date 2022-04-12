@@ -71,10 +71,10 @@ void read_packets(const std::string &pcap_filename,
       msg.buf.push_back(0);
 
       if (payload.size() == lidar_payload_size) {
-        bag.write("/os1_node/lidar_packets", ros_time, msg);
+        bag.write("/os_node/lidar_packets", ros_time, msg);
         lidar_packets++;
       } else if (payload.size() == imu_payload_size) {
-        bag.write("/os1_node/imu_packets", ros_time, msg);
+        bag.write("/os_node/imu_packets", ros_time, msg);
         imu_packets++;
       }
     }
