@@ -28,5 +28,6 @@ The code repos can live anywhere on your machine, just make sure to use absolute
 ## Running
 
 * After building, the `pcap_to_bag` executable will be in this folder: `myworkspace/devel/lib/pcap_to_bag/`
-* You can run `./pcap_to_bag name_of_pcap.pcap name_of_bag.bag number_of_laser_channels`
-* e.g. for a 128 channel sensor `./pcap_to_bag my.pcap my.bag 128`
+* You can run `./pcap_to_bag name_of_pcap.pcap name_of_bag.bag lidar_payload_size_bytes`
+* e.g. for a 128 channel sensor in udp_profile_lidar=RNG15_RFL8_NIR8  `./pcap_to_bag my.pcap my.bag 8448`
+* Reference the user manual for [calculating the lidar_payload_size](https://static.ouster.dev/sensor-docs/image_route1/image_route2/sensor_data/sensor-data.html#packet-size-calculation-configurable).
