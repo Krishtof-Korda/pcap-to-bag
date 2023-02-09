@@ -17,6 +17,7 @@ Install requirements prior to building using the command below.
 
 You will create a new catkin workspace and link both the `ouster_example` and `pcap-to-bag` code repos.
 The code repos can live anywhere on your machine, just make sure to use absolute paths like **`/home/user/pcap-to-bag`** and **do not** use relative paths such as `~/pcap-to-bag`
+> **_NOTE:_** You must use ouster_example at [tag 20210608](https://github.com/ouster-lidar/ouster_example/releases/tag/20210608)
 
 * `mkdir -p myworkspace/src`
 *  `cd myworkspace`
