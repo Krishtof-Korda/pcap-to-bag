@@ -15,20 +15,13 @@ uint32_t imu_payload_size = 48;
 
 void read_packets(const std::string &pcap_filename,
                   const std::string &bag_filename,
-                  const std::string &num_channels) {
+                  const std::string &lidar_payload) {
 
-  uint32_t num_chans = static_cast<uint32_t>(
-      std::stoul(num_channels)); // Number of channels, e.g. for an OSX-64,
-                                 // num_channels = 64
-
-  uint32_t azimuths_per_packet = 16;
-  uint32_t num_header_footer_words = 5;
-  uint32_t bytes_per_word = 4;
-  uint32_t words_per_channel = 3;
-  uint32_t lidar_payload_size =
-      azimuths_per_packet * bytes_per_word *
-      (num_header_footer_words + (num_chans * words_per_channel));
-
+  // calculate lidar payload size based on udp_profile_lidar. 
+  // https://static.ouster.dev/sensor-docs/image_route1/image_route2/sensor_data/sensor-data.html#packet-size-calculation-configurable
+  uint32_t lidar_payload_size = static_cast<uint32_t>(
+      std::stoul(lidar_payload)); 
+  
   rosbag::Bag bag;
   bag.open(bag_filename, rosbag::bagmode::Write);
 
@@ -90,7 +83,7 @@ void read_packets(const std::string &pcap_filename,
 
 int main(int argc, char** argv) {
     if (argc != 4) {
-        std::cout << "USAGE: pcap_to_bag pcap_filename.pcap bag_filename.bag num_lidar_channels"
+        std::cout << "USAGE: pcap_to_bag pcap_filename.pcap bag_filename.bag lidar_payload_size"
                   << std::endl;
         return 1;
     }
